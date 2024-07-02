@@ -58,7 +58,7 @@ const authenticate = (req, res, next) => {
 // Routes
 app.get('/', (req, res) => {
     res.json({
-      message: 'Welcome, learnly app interview server is active and running',
+      message: 'Welcome, learnly app interview server is active and running updated',
     });
 });
 
