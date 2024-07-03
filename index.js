@@ -7,6 +7,11 @@ const bcrypt = require('bcrypt');
 //Add Environmental Variable
 require('dotenv').config();
 
+//Additional CORS because of x-auth-token
+const cors = require('cors');
+app.use(cors());
+
+
 // Enable CORS
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
