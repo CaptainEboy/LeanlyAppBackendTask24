@@ -138,6 +138,15 @@ app.get('/products/:id', authenticate, async (req, res) => {
     }
   });
 
+  //Find products by their name
+  app.get('/api/products/:name',authenticate, async (req, res) => {
+    const name = req.params.name;
+    // Query the database using the name parameter
+    const product = await Product.findOne({ name });
+    res.json(product);
+  });
+  
+
 //Edit entire information about a product By ID
 app.put('/products/:id', authenticate, async (req, res) => {
   const id = req.params.id;
