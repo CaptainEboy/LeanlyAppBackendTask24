@@ -7,6 +7,14 @@ const bcrypt = require('bcrypt');
 //Add Environmental Variable
 require('dotenv').config();
 
+// Enable CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 //For Form data
 const multer = require('multer');
 const upload = multer();
